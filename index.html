@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Code Editor</title>
+  <!--LINK CSS-->
+  <link rel="stylesheet" href="css/style.css" />
+  <!--FAVION-->
+  <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+</head>
+
+<body>
+    <!--NAVIGATION START-->
+      <nav class="navbar bg-light">
+        <div class="container">
+          <a class="navbar-brand" >
+            <img src="Images/CODE-AETHR2-unscreen.gif" alt="Logo" id="gifImage" class="zoom" >
+          </a>         
+        </div>
+      </nav>
+    <!--NAVIGATION END-->
+    
+    <!--MAIN SECTION START-->
+  <div class="header-wrap">
+        <div class="robot">
+      <div class="dotlottie-container">
+          <dotlottie-player src="https://lottie.host/57c083f9-b3da-484a-9db2-cec657b49e71/laL9OW2GqV.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
+      </div>
+    </div>
+    <h1>Online Code Editor</h1>
+  </div>
+  <div id="ide-parent">
+    <div id="button-wrapper">
+      <button onclick="switchPanel(0)">HTML</button>
+      <button onclick="switchPanel(1)">CSS</button>
+      <button onclick="switchPanel(2)">js</button>
+      <button onclick="runEdit(3)">Result</button>
+    </div>
+    <div id="ide-container">
+      <div class="panel-wrapper">
+        <div id="html">
+&lt;!--predefined html, but editable--&gt;
+
+&lt;div class="circle"&gt;
+	click me!
+&lt;/div&gt;
+
+        </div>
+      </div>
+      <div class="panel-wrapper">
+        <div id="css">
+/*predefined CSS, but editable*/
+
+.circle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background: #72e5c0;
+	margin: auto;
+	margin-top: 50px;
+	transition-duration: 300ms;
+}
+        </div>
+      </div>
+      <div class="panel-wrapper">
+        <div id="js">
+//predefined JavaScript, but editable
+
+var circle = document.querySelector(".circle");
+var bool = false;
+
+circle.addEventListener('click', function() {
+    if (!bool) {
+        circle.style.background = "#72e5c0";
+        bool = true;
+    } else {
+        circle.style.background = "#d8f520";
+        bool = false;
+    }
+});
+        </div>
+      </div>
+      <div class="panel-wrapper">
+        <iframe id="result"></iframe>
+      </div>
+    </div>
+  </div>
+    <!--MAIN SECTION END-->
+
+    <!--FOOTER START-->
+  <div class="footer">
+    <div class="inner-wrap">
+      <p>&#169; <span></span> Copyright:2024. Design and Developed by Aarthi.❤️</p>
+      <div class="icons-wrap">
+      </div>
+    </div>
+  </div>
+    <!--FOOTER END-->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+   <!--LINK JS-->
+  <script src="js/script.js"></script>
+</body>
+</html>
